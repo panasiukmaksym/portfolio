@@ -1,0 +1,185 @@
+@media ( max-width: 1400px )
+    .container
+        width: 1200px
+    .first
+        &__title
+            font-size: 38px
+@media ( max-width: 1200px )
+    .container
+        width: 960px
+    .nav
+        &__link
+            width: 80%
+    .first
+        &__photo
+            width: 40%
+            img
+                width: 100%
+        &__card
+            width: 60%
+        &__title
+            line-height: 70px
+            font-size: 42px
+    .about
+        &__text
+            line-height: 30px
+            margin-bottom: 5px
+            font-size: 18px
+        &__subtitle
+            font-size: 20px
+            margin-bottom: 10px
+    .tech
+        &__title, &__text
+            font-size: 16px
+    .tools
+        &__card
+            width: 32%
+            &-middle, &-big
+                width: 49%
+                margin-top: 0px
+
+@media ( max-width: 992px )
+    .container
+        width: 720px
+    .nav
+        &__link
+            a
+                font-size: 16px
+    .first
+        &__title
+            font-size: 36px
+        &__subtitle
+            font-size: 22px
+    .about
+        &__block
+            align-items: flex-start
+    .tech
+        &__block
+            flex-wrap: wrap
+            gap: 25px
+        &__card
+            width: 48%
+            min-height: 350px
+    .tools
+        &__card
+            width: 49%
+            &-big
+                width: 100%
+@media ( max-width: 768px )
+    .container
+        width: 540px
+    .nav
+        &__link
+            display: none
+        &__hamb
+            display: block
+    .first
+        &__title
+            font-size: 26px
+            line-height: 55px
+    .about
+        &__text
+            line-height: 20px
+            font-size: 16px
+    .tech
+        &__block
+            gap: 20px
+        &__card
+            width: 48%
+    .tools
+        &__text, &__title
+            font-size: 14px
+        &__image
+            height: 80px
+        &__card
+            gap: 10px
+    .contacts
+        &__block
+            gap: 100px
+    .work
+        &__text
+            font-size: 16px
+        &__link
+            a
+                font-size: 16px
+@media ( max-width: 576px )
+    .container
+        width: 100%
+        padding: 0px 10px
+    .first
+        &__block
+            flex-direction: column
+            align-items: center
+            gap: 40px
+        &__photo
+            width: 50%
+        &__card
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 90%
+        &__title
+            font-size: 22px
+            text-align: center
+            line-height: 40px
+            margin: 10px 0px
+        &__subtitle
+            text-align: center
+            font-size: 18px
+        &__footer
+            height: 60px
+        &__pointer
+            width: 35px
+    .about
+        &__img
+            display: none
+        &__hidden
+            display: block
+        &__block
+            flex-direction: column
+            align-items: center
+            gap: 20px
+        &__photo
+            width: 100%
+            img
+                border-radius: 20px
+                width: 100%
+        &__card
+            width: 100%
+        &__subtitle
+            text-align: center
+        &__text
+            text-align: center
+    .tech
+        &__block
+            gap: 20px
+            flex-direction: column
+            align-items: center
+        &__card
+            width: 85%
+            img
+                width: 35%
+    .tools
+        &__card
+            width: 85%
+        &__block
+            align-items: center
+            justify-content: center
+    .work
+        &__block
+            grid-template-columns: 1fr
+        &__btn
+            width: 15px
+    .contacts
+        &__block
+            flex-direction: column
+            gap: 50px
+        &__image
+            width: 60%
+        &__text
+            width: 200px
+    .title
+        font-size: 26px
+        margin: 40px 0px
+    .menu
+        width: 80%
