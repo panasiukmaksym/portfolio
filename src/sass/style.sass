@@ -50,7 +50,7 @@ body
         padding-bottom: 10px
     &__pointer
         width: 50px
-        opacity: 0.8
+        opacity: 0.6
         cursor: pointer
         animation: updown 1.5s infinite ease-in-out
         &:hover
@@ -80,10 +80,11 @@ body
     height: 100vh
     width: 450px
     background: black
+    display: flex
     flex-direction: column
+    align-items: flex-start
     padding: 20px
     gap: 100px
-    display: flex
     transition: 0.6s all
     z-index: 300
     &-active
@@ -119,6 +120,7 @@ body
     &__link
         display: flex
         justify-content: space-between
+        align-items: center
         width: 60%
         a
             text-decoration: none
@@ -130,12 +132,57 @@ body
         img
             width: 100%
 
+.language
+    display: flex
+    border: 2px solid white
+    justify-content: space-around
+    &__ua, &__ru
+        padding: 3px 6px
+        cursor: pointer
+        font-size: 14px
+        width: 100%
+        text-align: center
+        a
+            font-weight: 600
+
+.up
+    position: fixed
+    width: 50px
+    bottom: 30px
+    right: 30px
+    background: white
+    border-radius: 100px
+    height: 50px
+    cursor: pointer
+    opacity: 0.6
+    display: none
+    &:hover
+        opacity: 1
+    img
+        display: block
+        width: 25px
+        height: 25px
+        margin-left: 13px
+        margin-top: 10px
+        transform: rotate(180deg)
+
 .title
     margin: 80px 0px
     text-align: center
     color: black
     font-size: 38px
     font-weight: 600
+    position: relative
+    z-index: -2
+    &::before
+        position: absolute
+        content: ''
+        height: 3px
+        width: 30%
+        background: orange
+        bottom: -20px
+        left: 50%
+        transform: translateX(-50%)
 
 .about
     &__block
@@ -148,7 +195,7 @@ body
         justify-content: center
         img
             width: 70%
-            border-radius: 40px
+            border-radius: 20px
     &__card
         width: 50%
     &__subtitle
@@ -169,9 +216,10 @@ body
     &__block
         display: flex
         justify-content: space-between
+        flex-wrap: wrap
         gap: 20px
     &__card
-        width: 25%
+        width: 23.5%
         display: flex
         flex-direction: column
         align-items: center
@@ -180,12 +228,16 @@ body
         min-height: 400px
         background: linear-gradient(214deg, rgba(0,255,214,0.4) 0%, rgba(255,2,2,0.4) 100%)
         padding: 20px
-        border-radius: 40px
+        border-radius: 20px
         cursor: pointer
         img
             width: 50%
+            &:hover
+                filter: drop-shadow(3px 5px 5px #000)
         &:hover
-            transform: scale(1.1)
+            // box-shadow: 3px 3px 5px gray
+            transform: scale(1.03)
+            // background: linear-gradient(214deg, rgba(0,255,214,0.6) 0%, rgba(255,2,2,0.6) 100%)
     &__title
         font-size: 22px
         font-weight: 600
@@ -211,12 +263,14 @@ body
         cursor: pointer
         &-big
             margin-top: 10px
-            width: 100%
+            width: 50%
         &:hover
-            transform: scale(1.1)
+            // box-shadow: 3px 3px 5px gray
+            transform: scale(1.05)
+            // background: linear-gradient(214deg, rgba(0,255,214,0.6) 0%, rgba(255,2,2,0.6) 100%)
     &__title
         color: black
-        font-size: 18px
+        font-size: 16px
         font-weight: 600
     &__image
         display: flex
@@ -233,6 +287,7 @@ body
     &__text
         color: black
         text-align: center
+        font-size: 16px
         &-big
             text-align: left
 
@@ -266,17 +321,22 @@ body
         &-active
             display: block
     &__link
-        margin-bottom: 10px
+        margin: 20px 0px
         display: none
         a
             text-decoration: none
             font-weight: 600
             text-transform: uppercase
+            font-size: 16px
+            border: 2px solid white
+            padding: 10px 20px
+            border-radius: 50px
+            &:hover
+                color: orange
+                background: white
         &-active
             display: block
             text-transform: uppercase
-            &:hover
-                text-decoration: underline
 
 .contacts
     margin-bottom: 100px

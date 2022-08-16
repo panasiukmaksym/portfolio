@@ -31,8 +31,32 @@
             font-size: 20px
             margin-bottom: 10px
     .tech
-        &__title, &__text
+        &__block
+            flex-wrap: wrap
+            gap: 10px
+        &__title
             font-size: 16px
+        &__text
+            font-size: 16px
+        &__card
+            min-height: 200px
+            width: 32%
+            img
+                width: 40%
+            &-js, &-jq
+                width: 49%
+                img
+                    width: 25%
+            &-html
+                order: 1
+            &-css
+                order: 2
+            &-sass
+                order: 3
+            &-js
+                order: 4
+            &-jq
+                order: 5
     .tools
         &__card
             width: 32%
@@ -46,10 +70,11 @@
     .nav
         &__link
             a
-                font-size: 16px
+                font-size: 14px
     .first
         &__title
-            font-size: 36px
+            font-size: 22px
+            line-height: 50px
         &__subtitle
             font-size: 22px
     .about
@@ -58,10 +83,15 @@
     .tech
         &__block
             flex-wrap: wrap
-            gap: 25px
+            gap: 10px
         &__card
-            width: 48%
+            width: 49%
             min-height: 320px
+            img
+                width: 40%
+            &-js, &-jq
+                img
+                    width: 40%
     .tools
         &__card
             width: 49%
@@ -70,6 +100,8 @@
 @media ( max-width: 768px )
     .container
         width: 540px
+    .title
+        font-size: 26px
     .nav
         &__logo
             width: 40px
@@ -78,13 +110,25 @@
         &__hamb
             display: block
     .first
+        &__block
+            flex-direction: column
+        &__photo
+            width: 35%
+        &__card
+            width: 100%
         &__title
-            font-size: 26px
-            line-height: 55px
+            font-size: 24px
+            line-height: 50px
+            text-align: center
+            width: 100%
+            font-weight: 800
+        &__subtitle
+            font-size: 22px
+            text-align: center
     .about
         &__text
             line-height: 20px
-            font-size: 16px
+            font-size: 20px
     .tech
         &__block
             gap: 20px
@@ -92,7 +136,7 @@
             width: 48%
     .tools
         &__text, &__title
-            font-size: 14px
+            font-size: 16px
         &__image
             height: 80px
         &__card
@@ -101,6 +145,8 @@
         &__block
             gap: 100px
     .work
+        &__block
+            gap: 10px
         &__text
             font-size: 16px
         &__link
@@ -158,7 +204,7 @@
             text-align: center
     .tech
         &__block
-            gap: 20px
+            gap: 10px
             flex-direction: column
             align-items: center
         &__card
@@ -190,3 +236,6 @@
         margin: 40px 0px
     .menu
         width: 80%
+    .up
+        bottom: 15px
+        right: 15px
