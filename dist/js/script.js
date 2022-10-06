@@ -1,71 +1,14 @@
-// const arrow = document.querySelectorAll('.work__arrow');
-// const text = document.querySelectorAll('.work__text');
-// const wrapp = document.querySelectorAll('.work__wrapper');
-// const links = document.querySelectorAll('.work__link');
-// let active = [false,false,false,false];
-
-// arrow.forEach((item, i) => {
-//     item.addEventListener('click', (e)=>{
-//         if ( active[i] == false ) {
-//             item.style.transform = 'rotate(180deg)';
-//             text[i].classList.toggle('work__text-active');
-//             links[i].classList.toggle('work__link-active');
-//             active[i] = true;
-//         } else if ( active[i] == true ) {
-//             item.style.transform = 'rotate(0deg)';
-//             text[i].classList.toggle('work__text-active');
-//             links[i].classList.toggle('work__link-active');
-//             active[i] = false;
-//         }
-//     });
-// });
-
-// wrapp.forEach((item, i) => {
-//     item.addEventListener("mouseover", function(){
-//         arrow[i].style.margin = "10px 0px";
-//         this.addEventListener("mouseout", function(){
-//             arrow[i].style.margin = "5px 0px";
-//         });
-//     });
-// });
-
-// const over = document.querySelector('.overflou');
-// const closedBtn = document.querySelector('.menu__close');
-// const menuBtn = document.querySelector('.menu');
-// const hamb = document.querySelector('.nav__hamb');
-
-// hamb.addEventListener('click', ()=>{
-//     over.classList.add('overflou-active');
-//     setTimeout(function(){
-//         menuBtn.classList.add('menu-active');
-//     }, 100);
-// });
-
-// closedBtn.addEventListener('click', ()=>{
-//     menuBtn.classList.remove('menu-active');
-//     setTimeout(function(){
-//         over.classList.remove('overflou-active');
-//     }, 300);
-// });
-
-// const body = document.querySelector('body');
-
-// body.addEventListener('click',(e)=> {
-//     if ( e.target.classList[0] == 'overflou' ) {
-//         menuBtn.classList.remove('menu-active');
-//         setTimeout(function(){
-//             over.classList.remove('overflou-active');
-//         }, 300);
-//     }
-// });
-
-// scripts on jQuery library
+// scripts on jQuery
 
 $(function(){
 
     // hover effect on arrows at jq
 
-    $('.work__wrapper').each(function(i){
+    function getRan() {
+        return Math.random() * (10 - -10) + -10;
+    }
+
+    $('.work__item').each(function(i){
         $(this).mouseover(function(){
             $($('.work__btn')[i]).css('margin-top', '8px');
         });
@@ -76,17 +19,17 @@ $(function(){
 
     // open cards at jq
 
-    var active = [false, false, false, false];
+    var active = [false, false, false, false, false, false];
 
     $('.work__btn').each(function(i){
         $(this).click(function(){
             $($('.work__link')[i]).css('transition', '0s').slideToggle(300, function(){
                 $($('.work__text')[i]).css('transition', '0s').slideToggle(500, function(){
                     if ( active[i] == false ) {
-                        $($('.work__arrow')[i]).css('transform', 'rotate(180deg)');
+                        $($('.work__arrow')[i]).css('transform', 'scale(-1)');
                         active[i] = true;
                     } else {
-                        $($('.work__arrow')[i]).css('transform', 'rotate(0deg)');
+                        $($('.work__arrow')[i]).css('transform', 'scale(1)');
                         active[i] = false;
                     }
                 });
@@ -164,7 +107,6 @@ $(function(){
     // fixed tools-card-text font-size when little window width
 
     $(window).resize( function(){
-        // console.log($(document).width());
         if ( $(document).width() < 1200 ) {
             $('.tools__text, .tools__title').css({
                 'font-size': '16px'
@@ -213,5 +155,64 @@ $(function(){
             toolsImg[i].style.filter = 'none';
         });
     });
+
+    // add info for myself show/hidden on js
+    
+    let aboutInside = document.querySelectorAll('.about *');
+    aboutInside.forEach( item => {
+        item.style.transition = 'none';
+    });
+
+    let activeAbout = false;
+
+    let plusVerticalLine = document.querySelector('.about__vertical');
+    plusVerticalLine.style.transition = '0.6s all';
+
+    
+    $('.about__plus').click( function() {
+        $('.about__slider').slideToggle(1500);
+        $('.about__add').slideToggle(1500, function(){
+            if ( activeAbout == false ) {
+                plusVerticalLine.style.opacity = '0';
+                activeAbout = true;
+            } else if ( activeAbout == true ) {
+                plusVerticalLine.style.opacity = '1';
+                activeAbout = false;
+            }
+        });
+    });
+
+    // // different certificate width
+
+    // let certificate = document.querySelector('.about__certificate');
+    // let certificateButton = document.querySelector('.about__slide img');
+    // let certificateActive = false;
+    // certificate.style.transition = '0.6s all';
+    // certificateButton.style.transition = '0.6s all';
+    // certificateButton.addEventListener('click', function(){
+    //     if ( certificateActive == false ) {
+    //         certificate.style.width = '100%';
+    //         certificateButton.style.transform = 'rotate(90deg)';
+    //         certificateActive = true;
+    //     } else {
+    //         certificate.style.width = '40%';
+    //         certificateButton.style.transform = 'rotate(-90deg)';
+    //         certificateActive = false;
+    //     }
+    // });
+
+    // //modal certificate
+
+    // let modalCertificate = document.querySelector('.about__modal');
+    // let imgCertificate = document.querySelector('.about__certificate img');
+    // modalCertificate.style.transition = '0.6s all';
+
+    // imgCertificate.addEventListener('click', function(){
+    //     modalCertificate.style.display = 'flex';
+    // });
+
+    // modalCertificate.addEventListener('click', function(){
+    //     modalCertificate.style.display = 'none';
+    // });
 
 });

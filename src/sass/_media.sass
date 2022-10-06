@@ -1,9 +1,6 @@
 @media ( max-width: 1400px )
     .container
         width: 1200px
-    .first
-        &__title
-            font-size: 38px
 @media ( max-width: 1200px )
     .container
         width: 960px
@@ -22,6 +19,8 @@
             font-size: 26px
         &__subtitle
             font-size: 24px
+            span
+                font-size: 24px
     .about
         &__text
             line-height: 30px
@@ -40,29 +39,14 @@
             font-size: 16px
         &__card
             min-height: 200px
-            width: 32%
+            width: 49%
             img
-                width: 40%
-            &-js, &-jq
-                width: 49%
-                img
-                    width: 25%
-            &-html
-                order: 1
-            &-css
-                order: 2
-            &-sass
-                order: 3
-            &-js
-                order: 4
-            &-jq
-                order: 5
+                width: 25%
     .tools
         &__card
             width: 32%
-            &-middle, &-big
-                width: 49%
-                margin-top: 0px
+            &-big
+                width: 100%
 
 @media ( max-width: 992px )
     .container
@@ -178,11 +162,16 @@
         &__subtitle
             text-align: center
             font-size: 18px
+            span
+                font-size: 18px
         &__footer
             height: 60px
         &__pointer
             width: 35px
     .about
+        &__descr
+            text-align: center
+            width: 80%
         &__img
             display: none
         &__hidden
@@ -202,6 +191,23 @@
             text-align: center
         &__text
             text-align: center
+            margin: 0 auto 15px auto
+        &__link
+            text-align: center
+        &__slide
+            display: none
+        &__certificate
+            width: 90%
+            margin: 0px auto
+            img
+                width: 100%
+        &__skill
+            text-align: center
+            width: 80%
+            margin: 0 auto 10px auto
+            list-style-type: none
+        &__links
+            align-items: center
     .tech
         &__block
             gap: 10px
